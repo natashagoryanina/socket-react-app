@@ -1,11 +1,13 @@
 import React from 'react';
-import TickerForm from './tickerForm/TickerForm';
+import Header from './header/Header';
+import TickerService from './tickerService/TickerService';
 
 const App = () => {
 
   return (
     <div>
-      <TickerForm />
+      <Header/>
+      <TickerService />
     </div>
   );
 };

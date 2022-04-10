@@ -1,42 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import io from 'socket.io-client';
-import TickerPage from '../tickerPage/TickerPage';
-const socket = io.connect("http://localhost:4000");
+import React from 'react';
 
-const initialState = {
-    ticker: '',
-    exchange: '',
-    price: '',
-    change: '',
-    changePercent: '',
-    divident: '',
-    yield: '',
-  };
-
-const TickerForm = () => {
-    const [priceTicker, setPriceTicker] = useState(initialState);
-    const [receivedTicker, setReceivedTicker] = useState([]);
-
-    useEffect(() => {
-        socket.on("receive_ticker", (data) => {
-          const newData = Object.values(data.priceTicker)
-          setReceivedTicker(newData);
-        });
-    }, [socket]);
-
-    const sendTicker = () => {
-        socket.emit("send_ticker", { priceTicker });
-    };
-    
-      const onFormChange = (e) => {
-        const { name, value } = e.target;
-        console.log(priceTicker)
-        setPriceTicker((prev) => ({...prev, [name]: value}));
-        console.log(priceTicker)
-    };
+const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
 
     return (
-        <>
         <form>
             <label>
                 Ticker:
@@ -104,9 +70,7 @@ const TickerForm = () => {
                 />
             </label>
             <button onClick={sendTicker}>Submit</button>
-      </form>
-      <TickerPage receivedTicker={receivedTicker}/>
-      </>
+        </form>
     );
 };
 
