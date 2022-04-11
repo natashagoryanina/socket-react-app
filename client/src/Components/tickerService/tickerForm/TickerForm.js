@@ -7,7 +7,7 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
             <label>
                 Ticker:
                 <select name='ticker' onChange={onFormChange}>
-                    <option value="AAPL" selected>AAPL</option>
+                    <option value="AAPL" defaultValue>AAPL</option>
                     <option value="GOOGL">GOOGL</option>
                     <option value="MSFT">MSFT</option>
                     <option value="AMZN">AMZN</option>
@@ -22,6 +22,8 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     value={priceTicker.exchange}
                     name='exchange'
                     onChange={onFormChange}
+                    pattern="[0-9]"
+                    required
                 />
             </label>
             <label>
@@ -31,6 +33,7 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     value={priceTicker.price}
                     name='price'
                     onChange={onFormChange}
+                    required
                 />
             </label>
             <label>
@@ -40,6 +43,7 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     value={priceTicker.change}
                     name='change'
                     onChange={onFormChange}
+                    required
                 />
             </label>
             <label>
@@ -49,6 +53,7 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     value={priceTicker.changePercent}
                     name='changePercent'
                     onChange={onFormChange}
+                    required
                 />
             </label>
             <label>
@@ -58,6 +63,7 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     value={priceTicker.divident}
                     name='divident'
                     onChange={onFormChange}
+                    required
                 />
             </label>
             <label>
@@ -67,6 +73,7 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     value={priceTicker.yield}
                     name='yield'
                     onChange={onFormChange}
+                    required
                 />
             </label>
             <button onClick={sendTicker}>Submit</button>

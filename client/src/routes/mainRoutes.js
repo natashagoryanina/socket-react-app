@@ -6,12 +6,12 @@ export const mainRoutes = [
         name: "Home",
         path: "/",
         exact: true,
-        component: HomePage,
+        element: <HomePage/>,
     },
     {
-        name: "Ticker Server",
+        name: "Ticker Service",
         path: "/ticker",
         exact: false,
-        component: TickerPage,
+        element: <TickerPage/>,
     },
 ];

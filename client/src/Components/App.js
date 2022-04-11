@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Header from './header/Header';
-import TickerService from './tickerService/TickerService';
+import Main from './main/Main';
 
 const App = () => {
-
   return (
     <div>
       <Header/>
-      <TickerService />
+      <Main/>
     </div>
   );
 };
@@ -15,6 +14,7 @@ const App = () => {
 export default App;
 
 //form validation
-//routes
+//routes +
 //redux
-//ticker page
+//ticker page +
+// styled components
