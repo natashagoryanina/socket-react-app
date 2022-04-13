@@ -18,18 +18,19 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
             <label>
                 Exchange:
                 <input
-                    type='text'
+                    type='number'
+                    min="0"
                     value={priceTicker.exchange}
                     name='exchange'
                     onChange={onFormChange}
-                    pattern="[0-9]"
                     required
                 />
             </label>
             <label>
                 Price:
                 <input
-                    type='text'
+                    type='number'
+                    min="0"
                     value={priceTicker.price}
                     name='price'
                     onChange={onFormChange}
@@ -39,7 +40,9 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
             <label>
                 Change:
                 <input
-                    type='text'
+                    type='number'
+                    min="0"
+                    max="1"
                     value={priceTicker.change}
                     name='change'
                     onChange={onFormChange}
@@ -49,7 +52,9 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
             <label>
                 Change percent:
                 <input
-                    type='text'
+                    type='number'
+                    min="0"
+                    max="1"
                     value={priceTicker.changePercent}
                     name='changePercent'
                     onChange={onFormChange}
@@ -59,7 +64,8 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
             <label>
                 Divident:
                 <input
-                    type='text'
+                    type='number'
+                    min="0"
                     value={priceTicker.divident}
                     name='divident'
                     onChange={onFormChange}
@@ -69,7 +75,8 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
             <label>
                 Yield:
                 <input
-                    type='text'
+                    type='number'
+                    min="0"
                     value={priceTicker.yield}
                     name='yield'
                     onChange={onFormChange}

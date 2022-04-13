@@ -31,9 +31,7 @@ const TickerService = () => {
     
       const onFormChange = (e) => {
         const { name, value } = e.target;
-        console.log(priceTicker)
         setPriceTicker((prev) => ({...prev, [name]: value}));
-        console.log(priceTicker)
     };
 
     return (
