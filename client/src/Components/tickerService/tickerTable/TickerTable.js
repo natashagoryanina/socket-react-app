@@ -1,30 +1,30 @@
 import React from 'react';
+import TickerTableContainer from './TickerTableStyled';
 
 const TickerTable = ({receivedTicker}) => {
-    console.log(receivedTicker);
     return (
-        <>
-        {/* <ul>
-            {receivedTicker.map((item)=> (<li key={item}>{item}</li>))}
-        </ul> */}
-        <table>
-        <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
-        </tr>
-        <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-        </tr>
-        <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
-        </tr>
-        </table>
-        </>
+        <TickerTableContainer>
+            <tr>
+                <th>Ticker</th>
+                <th>Exchange</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>Change Percent</th>
+                <th>Divident</th>
+                <th>Yield</th>
+                <th>Last trade time</th>
+            </tr>
+            <tr>
+                <td>{receivedTicker.ticker}</td>
+                <td>{receivedTicker.exchange}</td>
+                <td>{receivedTicker.price}$</td>
+                <td>{receivedTicker.change}</td>
+                <td>{receivedTicker.changePercent}%</td>
+                <td>{receivedTicker.divident}</td>
+                <td>{receivedTicker.yield}</td>
+                <td>{receivedTicker.last_trade_time}</td>
+            </tr>
+        </TickerTableContainer>
     );
 };
 
