@@ -1,20 +1,20 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import NavigationContainer from './NavigationStyled';
 
 const Navigation = ({routes}) => {
     return (
-        <nav>
-            <h2>Navigation</h2>
-            <ul>
+        <NavigationContainer>
+            <ul className='nav-list'>
                 {routes.map(({path, name})=> (
-                    <li key={path}>
-                        <NavLink to={path}>
+                    <li key={path} className='nav-list_item'>
+                        <NavLink to={path} className='nav-link'>
                             {name}
                         </NavLink>
                     </li>
                 ))}
             </ul>
-        </nav>
+        </NavigationContainer>
     );
 };
 

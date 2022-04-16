@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import PropagateLoader from "react-spinners/PropagateLoader";
+import GlobalStyles from '../styles/globalStyles';
 
 const HomePage = lazy(() => import('../pages/HomePage' /* webpackChunkName: 'home-page' */));
 const TickerPage = lazy(() => import('../pages/TickerPage' /* webpackChunkName: 'ticker-page' */));
@@ -18,6 +19,7 @@ const App = () => {
 
   return (
     <main>
+      <GlobalStyles/>
       <Suspense fallback={<PropagateLoader color={'#D0024A'} loading={loading} size={15} />}>
         <Header/>
         <Routes>

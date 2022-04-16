@@ -1,12 +1,18 @@
 import React from 'react';
+import TickerFormContainer from './TickerFormStyled';
 
 const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
 
     return (
-        <form>
-            <label>
+        <TickerFormContainer>
+            <form className='form'>
+            <label className='form-label'>
                 Ticker:
-                <select name='ticker' onChange={onFormChange}>
+                <select 
+                    name='ticker' 
+                    onChange={onFormChange}
+                    className='form-select'
+                >
                     <option value="AAPL" defaultValue>AAPL</option>
                     <option value="GOOGL">GOOGL</option>
                     <option value="MSFT">MSFT</option>
@@ -15,7 +21,7 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     <option value="TSLA">TSLA</option>
                 </select>
             </label>
-            <label>
+            <label className='form-label'>
                 Exchange:
                 <input
                     type='number'
@@ -24,9 +30,10 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     name='exchange'
                     onChange={onFormChange}
                     required
+                    className='form-input'
                 />
             </label>
-            <label>
+            <label className='form-label'>
                 Price:
                 <input
                     type='number'
@@ -35,33 +42,36 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     name='price'
                     onChange={onFormChange}
                     required
+                    className='form-input'
                 />
             </label>
-            <label>
+            <label className='form-label'>
                 Change:
                 <input
                     type='number'
                     min="0"
-                    max="1"
+                    max="100"
                     value={priceTicker.change}
                     name='change'
                     onChange={onFormChange}
                     required
+                    className='form-input'
                 />
             </label>
-            <label>
+            <label className='form-label'>
                 Change percent:
                 <input
                     type='number'
                     min="0"
-                    max="1"
+                    max="100"
                     value={priceTicker.changePercent}
                     name='changePercent'
                     onChange={onFormChange}
                     required
+                    className='form-input'
                 />
             </label>
-            <label>
+            <label className='form-label'>
                 Divident:
                 <input
                     type='number'
@@ -70,9 +80,10 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     name='divident'
                     onChange={onFormChange}
                     required
+                    className='form-input'
                 />
             </label>
-            <label>
+            <label className='form-label'>
                 Yield:
                 <input
                     type='number'
@@ -81,10 +92,29 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     name='yield'
                     onChange={onFormChange}
                     required
+                    className='form-input'
                 />
             </label>
-            <button onClick={sendTicker}>Submit</button>
-        </form>
+            <label className='form-label'>
+                Last trade time:
+                <input
+                    type='date'
+                    value={priceTicker.last_trade_time}
+                    name='last_trade_time'
+                    onChange={onFormChange}
+                    required
+                    className='form-input'
+                />
+            </label>
+            </form>
+            <button 
+                type='button'
+                onClick={sendTicker}
+                className='submit-btn'
+            >
+                Submit
+            </button>
+        </TickerFormContainer>
     );
 };
 
