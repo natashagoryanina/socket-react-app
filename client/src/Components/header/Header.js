@@ -10,7 +10,6 @@ const Header = () => {
             <Link 
                 to="/" 
                 className="header-link"
-                activeClassName='header-link_ctive'
             >
                 The Price Ticker Service
             </Link>

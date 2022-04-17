@@ -24,8 +24,6 @@ const TickerService = () => {
 
     useEffect(() => {
         socket.on("receive_ticker", (data) => {
-          //const newData = Object.values(data.priceTicker)
-          //setReceivedTicker(newData);
           setReceivedTicker(data.priceTicker);
           setTable((prev) => (!prev));
         });

@@ -20,7 +20,7 @@ const App = () => {
   return (
     <main>
       <GlobalStyles/>
-      <Suspense fallback={<PropagateLoader color={'#D0024A'} loading={loading} size={15} />}>
+      <Suspense fallback={<PropagateLoader color={'#640dc7'} loading={loading} size={15} />}>
         <Header/>
         <Routes>
             <Route path="/" element={<HomePage/>} exact/>
@@ -34,7 +34,7 @@ const App = () => {
 
 export default App;
 
-//styled components
+//styled components +
 //redux
 //test
 //toaster

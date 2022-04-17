@@ -8,7 +8,10 @@ const Navigation = ({routes}) => {
             <ul className='nav-list'>
                 {routes.map(({path, name})=> (
                     <li key={path} className='nav-list_item'>
-                        <NavLink to={path} className='nav-link'>
+                        <NavLink 
+                            to={path} 
+                            className='nav-link'
+                        >
                             {name}
                         </NavLink>
                     </li>

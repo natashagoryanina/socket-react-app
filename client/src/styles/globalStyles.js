@@ -12,6 +12,10 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Noto Sans', sans-serif;
     }
 
+    h1, h2, h3, p {
+        margin: 0;
+    }
+
     ul {
         list-style: none;
         padding: 0;

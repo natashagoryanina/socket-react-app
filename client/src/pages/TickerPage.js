@@ -3,9 +3,7 @@ import TickerService from '../Components/tickerService/TickerService';
 
 const TickerPage = () => {
     return (
-        <>
-            <TickerService/>
-        </>
+        <TickerService/>
     );
 };
 

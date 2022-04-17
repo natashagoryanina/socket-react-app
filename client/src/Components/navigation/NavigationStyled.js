@@ -4,6 +4,7 @@ const NavigationContainer = styled.nav `
     .nav-list {
         display: flex;
         margin: 20px 0px;
+
         &_item {
             &:not(:last-child) {
                 margin-right: 10px;
@@ -22,6 +23,8 @@ const NavigationContainer = styled.nav `
             color: #ffffff;
             text-shadow: 1px 1px 20px #fff, -1px -1px 20px #fff;
         }
+
+        
     }
 `;
 
