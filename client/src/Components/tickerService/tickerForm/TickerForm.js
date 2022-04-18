@@ -1,7 +1,9 @@
 import React from 'react';
 import TickerFormContainer from './TickerFormStyled';
+import { addTicker } from '../../../redux/tickerActions';
+import { connect } from 'react-redux';
 
-const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
+const TickerForm = ({onFormChange, priceTicker, sendTicker, addTicker}) => {
 
     return (
         <TickerFormContainer>
@@ -12,8 +14,10 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     name='ticker' 
                     onChange={onFormChange}
                     className='form-select'
+                    autoFocus
+                    required
                 >
-                    <option value="AAPL" defaultValue>AAPL</option>
+                    <option value="AAPL">AAPL</option>
                     <option value="GOOGL">GOOGL</option>
                     <option value="MSFT">MSFT</option>
                     <option value="AMZN">AMZN</option>
@@ -29,8 +33,8 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     value={priceTicker.exchange}
                     name='exchange'
                     onChange={onFormChange}
-                    required
                     className='form-input'
+                    required
                 />
             </label>
             <label className='form-label'>
@@ -41,8 +45,8 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     value={priceTicker.price}
                     name='price'
                     onChange={onFormChange}
-                    required
                     className='form-input'
+                    required
                 />
             </label>
             <label className='form-label'>
@@ -54,8 +58,8 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     value={priceTicker.change}
                     name='change'
                     onChange={onFormChange}
-                    required
                     className='form-input'
+                    required
                 />
             </label>
             <label className='form-label'>
@@ -67,8 +71,8 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     value={priceTicker.changePercent}
                     name='changePercent'
                     onChange={onFormChange}
-                    required
                     className='form-input'
+                    required
                 />
             </label>
             <label className='form-label'>
@@ -79,8 +83,8 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     value={priceTicker.divident}
                     name='divident'
                     onChange={onFormChange}
-                    required
                     className='form-input'
+                    required
                 />
             </label>
             <label className='form-label'>
@@ -91,8 +95,8 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     value={priceTicker.yield}
                     name='yield'
                     onChange={onFormChange}
-                    required
                     className='form-input'
+                    required
                 />
             </label>
             <label className='form-label'>
@@ -102,8 +106,8 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
                     value={priceTicker.last_trade_time}
                     name='last_trade_time'
                     onChange={onFormChange}
-                    required
                     className='form-input'
+                    required
                 />
             </label>
             </form>
@@ -118,4 +122,14 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
     );
 };
 
-export default TickerForm;
+const mapStateToProps = (state) => {
+    return {
+        ticker: state.ticker,
+    };
+};
+
+const mapDispatchToProps = {
+    addTicker
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TickerForm);

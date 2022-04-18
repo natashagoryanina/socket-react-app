@@ -1,7 +1,8 @@
 import React from 'react';
 import TickerTableContainer from './TickerTableStyled';
 
-const TickerTable = ({receivedTicker}) => {
+const TickerTable = (props) => {
+
     return (
         <TickerTableContainer>
             <tr>
@@ -15,14 +16,14 @@ const TickerTable = ({receivedTicker}) => {
                 <th>Last trade time</th>
             </tr>
             <tr>
-                <td>{receivedTicker.ticker}</td>
-                <td>{receivedTicker.exchange}</td>
-                <td>{receivedTicker.price}$</td>
-                <td>{receivedTicker.change}</td>
-                <td>{receivedTicker.changePercent}%</td>
-                <td>{receivedTicker.divident}</td>
-                <td>{receivedTicker.yield}</td>
-                <td>{receivedTicker.last_trade_time}</td>
+                <td>{props.receivedTicker.ticker}</td>
+                <td>{props.receivedTicker.exchange}</td>
+                <td>{props.receivedTicker.price}$</td>
+                <td>{props.receivedTicker.change}</td>
+                <td>{props.receivedTicker.changePercent}%</td>
+                <td>{props.receivedTicker.divident}</td>
+                <td>{props.receivedTicker.yield}</td>
+                <td>{props.receivedTicker.last_trade_time}</td>
             </tr>
         </TickerTableContainer>
     );
