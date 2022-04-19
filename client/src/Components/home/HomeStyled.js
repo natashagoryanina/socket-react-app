@@ -14,8 +14,6 @@ const HomeContainer = styled.section`
             }
         }
     }
-
-
 `;
 
 export default HomeContainer;

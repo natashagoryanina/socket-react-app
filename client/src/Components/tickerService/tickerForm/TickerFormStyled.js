@@ -9,7 +9,7 @@ const TickerFormContainer = styled.div`
             margin-bottom: 20px;
             color: #fff;
             font-size: inherit; 
-    }
+        }
 
         &-input {
             margin-left: 10px;

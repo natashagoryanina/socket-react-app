@@ -23,8 +23,6 @@ const NavigationContainer = styled.nav `
             color: #ffffff;
             text-shadow: 1px 1px 20px #fff, -1px -1px 20px #fff;
         }
-
-        
     }
 `;
 

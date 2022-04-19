@@ -1,10 +1,8 @@
 import React from 'react';
 import TickerFormContainer from './TickerFormStyled';
-import { addTicker } from '../../../redux/tickerActions';
-import { connect } from 'react-redux';
 
-const TickerForm = ({onFormChange, priceTicker, sendTicker, addTicker}) => {
-
+const TickerForm = ({onFormChange, priceTicker, sendTicker}) => {
+    
     return (
         <TickerFormContainer>
             <form className='form'>
@@ -122,14 +120,4 @@ const TickerForm = ({onFormChange, priceTicker, sendTicker, addTicker}) => {
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        ticker: state.ticker,
-    };
-};
-
-const mapDispatchToProps = {
-    addTicker
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(TickerForm);
+export default TickerForm;
